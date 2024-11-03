@@ -6,3 +6,6 @@
 @import "/src/styles/mixins/_mixin.scss";
 /* layout */
 @import "/src/styles/layout/_header.scss";
+/* component */
+@import "/src/styles/component/_dateTime.scss";
+@import "/src/styles/component/_weatherDetail.scss";

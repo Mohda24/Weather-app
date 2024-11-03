@@ -1,14 +1,18 @@
 @import '../mixins/mixin';
-header{
+@import '../base/variables';
+
+header {
     @include center-content-vertical;
     padding-top: 3.9375rem;
     justify-content: space-between;
-// dark mode part
-    .darkMode{
+    margin-bottom: 3.0625rem;
+
+    // dark mode part
+    .darkMode {
         @include center-content-vertical;
         flex-direction: column;
 
-        & .darkModBtn{
+        & .darkModBtn {
             width: 6.25rem;
             height: 2.413rem;
             border-radius: 40px;
@@ -22,23 +26,25 @@ header{
             padding-block: .3125rem .2256rem;
             margin-bottom: .375rem;
 
-            & .elipse{
+            & .elipse {
                 width: 1.875rem;
                 height: 1.875rem;
                 border-radius: 50%;
                 background-color: #111;
                 display: inline-block;
             }
-}     
+        }
 
-        & .DarkModeTitle{
+        & .DarkModeTitle {
             font-size: 1.125rem;
             font-weight: 800;
         }
     }
+
     // search bar part
-    .search{
+    .search {
         max-width: 803px;
+        flex: 1;
         width: 100%;
         height: 62px;
         padding-inline: 33px 80px;
@@ -53,11 +59,12 @@ header{
         @include center-content-vertical;
         gap: 1.8125rem;
 
-        & .search-btn{
+        & .search-btn {
             width: 40px;
             height: 46px;
         }
-        & input.search-bar{
+
+        & input.search-bar {
             flex: 1;
             height: 1.75rem;
             font-size: 18px;
@@ -66,14 +73,16 @@ header{
             border: none;
             background-color: transparent;
 
-            &::placeholder{
+            &::placeholder {
                 opacity: 0.6;
             }
 
         }
-}
+    }
+
     // location part
-    .location{
+    .location {
+        user-select: none;
         width: 292px;
         max-width: 292px;
         height: 62px;
@@ -85,20 +94,30 @@ header{
         @include center-content;
         background-color: #4CBB17;
         gap: .25rem;
+        transition: $transition ease;
+        -webkit-transition: $transition ease;
+        -moz-transition: $transition ease;
+        -ms-transition: $transition ease;
+        -o-transition: $transition ease;
 
-        & .locationIcon{
-            width: 2.1875rem;
-            height: 2.1875rem;
-            
+        &:hover {
+            cursor: pointer;
+            background-color: darken(#4CBB17, 5%);
         }
 
-        & .locationTitle{
+        & .locationIcon {
+            width: 2.1875rem;
+            height: 2.1875rem;
+
+        }
+
+        & .locationTitle {
             color: rgba(255, 255, 255, 0.80);
             font-size: 1.375rem;
             font-weight: 800;
 
 
-            
+
         }
-}
+    }
 }

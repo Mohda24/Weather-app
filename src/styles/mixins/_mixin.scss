@@ -24,3 +24,15 @@
     display: flex;
     justify-content: center;
 }
+// weather degree style
+@mixin weather-degree($theme) {
+    @if $theme == 'light' {
+        background:  linear-gradient(80deg, #292929 -2.93%, rgba(255, 255, 255, 0.00) 212.44%);
+    } @else if $theme == 'dark' {
+        background: linear-gradient(84deg, #FFF -16.56%, rgba(255, 255, 255, 0.00) 118.43%);
+    }
+}
+// box shadow style
+@mixin box-shadow{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), 10px 10px 4px 0px rgba(0, 0, 0, 0.50);
+}

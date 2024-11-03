@@ -1,0 +1,37 @@
+@import "../base/variables";
+@import "../mixins/mixin";
+section.dateTimeInfo{
+    width: 31.875rem;
+    height: 20.625rem;
+    border-radius: 1.875rem;
+    -webkit-border-radius: 1.875rem;
+    -moz-border-radius: 1.875rem;
+    -ms-border-radius: 1.875rem;
+    -o-border-radius: 1.875rem;
+    background-color: $selection-color;
+    @include box-shadow;
+    @include center-content;
+    flex-direction: column;
+
+    & .city{
+        font-size: 2.25rem;
+        font-weight: 700;
+    }
+
+    & .dateTime{
+        @include center-content;
+        flex-direction: column;
+        margin-top: 1.8125rem;
+
+        & .time{
+            font-size: 6rem;
+            font-weight: 700;
+
+        }
+
+        & .date{
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+    }
+}

@@ -1,30 +1,112 @@
 {
-    "0": "Clear sky",
-    "1": "Mainly clear",
-    "2": "partly cloudy",
-    "3": "overcast",
-    "45": "Fog",
-    "48": "depositing rime fog",
-    "51": "Drizzle: Light intensity",
-    "53": "Drizzle: Moderate intensity",
-    "55": "Drizzle: Dense intensity",
-    "56": "Freezing Drizzle: Light intensity",
-    "57": "Freezing Drizzle: Dense intensity",
-    "61": "Rain: Slight intensity",
-    "63": "Rain: Moderate intensity",
-    "65": "Rain: Heavy intensity",
-    "66": "Freezing Rain: Light intensity",
-    "67": "Freezing Rain: Heavy intensity",
-    "71": "Snow fall: Slight intensity",
-    "73": "Snow fall: Moderate intensity",
-    "75": "Snow fall: Heavy intensity",
-    "77": "Snow grains",
-    "80": "Rain showers: Slight",
-    "81": "Rain showers: Moderate",
-    "82": "Rain showers: Violent",
-    "85": "Snow showers: Slight",
-    "86": "Snow showers: Heavy",
-    "95": "Thunderstorm: Slight or moderate",
-    "96": "Thunderstorm with slight hail",
-    "99": "Thunderstorm with heavy hail"
+    "0": {
+        "description": "Clear sky",
+        "icon_day": "100.png",  
+        "icon_night": "150.png"  
+    },
+    "1": {
+        "description": "Mainly clear",
+        "icon_day": "103.png",  
+        "icon_night": "153.png" 
+    },
+    "2": {
+        "description": "Partly cloudy",
+        "icon_day": "104.png",  
+        "icon_night": "154.png"  
+    },
+    "3": {
+        "description": "Overcast",
+        "icon_day": "101.png",
+        "icon_night": "102.png"
+    },
+    "45": {
+        "description": "Fog",
+        "icon_day": "500.png",
+        "icon_night": "500.png"
+    },
+    "48": {
+        "description": "Depositing rime fog",
+        "icon_day": "501.png",
+        "icon_night": "501.png"
+    },
+    "51": {
+        "description": "Drizzle: Light intensity",
+        "icon_day": "313.png",
+        "icon_night": "313.png"
+    },
+    "53": {
+        "description": "Drizzle: Moderate intensity",
+        "icon_day": "314.png",
+        "icon_night": "314.png"
+    },
+    "55": {
+        "description": "Drizzle: Dense intensity",
+        "icon_day": "315.png",
+        "icon_night": "315.png"
+    },
+    "61": {
+        "description": "Rain: Slight intensity",
+        "icon_day": "305.png",
+        "icon_night": "305.png"
+    },
+    "63": {
+        "description": "Rain: Moderate intensity",
+        "icon_day": "307.png",
+        "icon_night": "307.png"
+    },
+    "65": {
+        "description": "Rain: Heavy intensity",
+        "icon_day": "308.png",
+        "icon_night": "308.png"
+    },
+    "71": {
+        "description": "Snow fall: Slight intensity",
+        "icon_day": "400.png",
+        "icon_night": "400.png"
+    },
+    "73": {
+        "description": "Snow fall: Moderate intensity",
+        "icon_day": "401.png",
+        "icon_night": "401.png"
+    },
+    "75": {
+        "description": "Snow fall: Heavy intensity",
+        "icon_day": "402.png",
+        "icon_night": "402.png"
+    },
+    "77": {
+        "description": "Snow grains",
+        "icon_day": "499.png",
+        "icon_night": "499.png"
+    },
+    "80": {
+        "description": "Rain showers: Slight",
+        "icon_day": "300.png",
+        "icon_night": "350.png"
+    },
+    "81": {
+        "description": "Rain showers: Moderate",
+        "icon_day": "351.png",
+        "icon_night": "351.png"
+    },
+    "82": {
+        "description": "Rain showers: Violent",
+        "icon_day": "302.png",
+        "icon_night": "302.png"
+    },
+    "95": {
+        "description": "Thunderstorm: Slight or moderate",
+        "icon_day": "302.png",
+        "icon_night": "302.png"
+    },
+    "96": {
+        "description": "Thunderstorm with slight hail",
+        "icon_day": "303.png",
+        "icon_night": "303.png"
+    },
+    "99": {
+        "description": "Thunderstorm with heavy hail",
+        "icon_day": "304.png",
+        "icon_night": "304.png"
+    }
 }

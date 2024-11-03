@@ -1,0 +1,44 @@
+// resets css
+@import "variables";
+@import "../mixins/mixin";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    scroll-behavior: smooth;
+    font-weight: 500;
+    min-height: 100vh;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+button{
+    all: unset;
+    cursor: pointer;
+}
+h1, h2, h3, h4, h5, h6, p, a,button{
+    font-family: inherit;
+}
+// dark mode
+.dark{
+    @include theme-background-color('dark');
+}
+// light mode
+.light{
+    @include theme-background-color('light');
+}
+// container
+.container{
+    width: 100%;
+    max-width: 83.625rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}

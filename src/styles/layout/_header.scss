@@ -1,0 +1,32 @@
+@import '../mixins/mixin';
+header{
+    @include center-content-vertical;
+    padding-top: 3.9375rem;
+
+    .darkMode{
+        @include center-content-horizontal;
+        flex-direction: column;
+
+        & .darkModBtn{
+            width: 6.25rem;
+            height: 2.413rem;
+            border-radius: 40px;
+            -webkit-border-radius: 40px;
+            -moz-border-radius: 40px;
+            -ms-border-radius: 40px;
+            -o-border-radius: 40px;
+            background-color: #D9D9D9;
+            border: 1px solid #000;
+            padding-inline: .6188rem .8125rem;
+            padding-block: .3125rem .2256rem;
+
+            & .elipse{
+                width: 1.875rem;
+                height: 1.875rem;
+                border-radius: 50%;
+                background-color: #111;
+                display: inline-block;
+            }
+}
+    }
+}

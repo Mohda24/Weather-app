@@ -1,0 +1,8 @@
+/* base css */
+@import "/src/styles/base/_resets.scss";
+@import "/src/styles/base/_typography.scss";
+@import "/src/styles/base/_variables.scss";
+/* mixins */
+@import "/src/styles/mixins/_mixin.scss";
+/* layout */
+@import "/src/styles/layout/_header.scss";

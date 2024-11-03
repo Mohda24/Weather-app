@@ -1,0 +1,26 @@
+@mixin theme-background-color($theme) {
+    @if $theme == 'light' {
+        background: linear-gradient(113deg, #FFF 0.28%, rgba(70, 97, 115, 0.00) 178.65%);
+        color: $light-text-color;
+    } @else if $theme == 'dark' {
+        background: linear-gradient(110deg, #383838 0%, rgba(158, 158, 158, 0.00) 71.82%);
+        background-repeat: no-repeat;
+        color: $dark-text-color;
+    } 
+}
+// centre the content
+@mixin center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// centre the content vertically
+@mixin center-content-vertical {
+    display: flex;
+    align-items: center;
+}
+// centre the content horizontally
+@mixin center-content-horizontal {
+    display: flex;
+    justify-content: center;
+}

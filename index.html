@@ -1,12 +1,38 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
 
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Weather-App</title>
+</head>
+
+<body class="dark">
+  <div class="container">
+    <header>
+      <div class="darkMode">
+        <div class="darkModBtn">
+          <span class="elipse"></span>
+        </div>
+        <span class="DarkModeTitle">Light Mode</span>
+      </div>
+      <div class="search">
+        <button class="search-btn">
+          <img src="./public/icons/search.png" alt="Icon for SearchBar">
+        </button>
+        <input type="text" class="search-bar" placeholder="Search for a city..." />
+      </div>
+      <div class="location">
+        <div class="locationIcon">
+          <img src="./public/icons/location.png" alt="Icon for Location">
+        </div>
+        <span class="locationTitle">Current Location</span>
+      </div>
+    </header>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+
 </html>

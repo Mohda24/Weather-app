@@ -13,6 +13,7 @@ header {
         flex-direction: column;
 
         & .darkModBtn {
+            position: relative;
             width: 6.25rem;
             height: 2.413rem;
             border-radius: 40px;
@@ -27,12 +28,20 @@ header {
             margin-bottom: .375rem;
 
             & .elipse {
+                position: absolute;
+                left: 5px;
+                top: 50%;
+                transform: translateY(-50%);
                 width: 1.875rem;
                 height: 1.875rem;
                 border-radius: 50%;
                 background-color: #111;
                 display: inline-block;
-            }
+                -webkit-transform: translateY();
+                -moz-transform: translateY();
+                -ms-transform: translateY();
+                -o-transform: translateY();
+}
         }
 
         & .DarkModeTitle {

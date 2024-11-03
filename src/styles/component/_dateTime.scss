@@ -1,6 +1,7 @@
 @import "../base/variables";
 @import "../mixins/mixin";
 section.dateTimeInfo{
+    flex-shrink: 1;
     width: 31.875rem;
     height: 20.625rem;
     border-radius: 1.875rem;

@@ -36,10 +36,12 @@ img{
 // dark mode
 .dark{
     @include theme-background-color('dark');
+    
 }
 // light mode
 .light{
     @include theme-background-color('light');
+    
 }
 // container
 .container{
@@ -48,3 +50,4 @@ img{
     margin: 0 auto;
     padding: 0 1rem;
 }
+

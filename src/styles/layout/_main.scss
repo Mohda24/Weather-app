@@ -1,0 +1,17 @@
+@import "../mixins/mixin";
+main{
+    .container{
+        & .current{
+            @include center-content-vertical;
+            justify-content: space-between;
+            // flex-wrap: wrap; 
+            gap: 1.25rem 
+        }
+
+        & .notCurrent{
+            @include center-content-vertical;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+}

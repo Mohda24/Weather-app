@@ -1,0 +1,60 @@
+@import "../base/variables";
+@import "../mixins/mixin";
+// style for hourly forecast
+section.hourlyForecast{
+    background-color: $selection-color;
+    max-width: 50rem;
+    width: 100%;
+    border-radius: 1.875rem;
+    padding: 1.25rem;
+
+    & .hourlyTitle{
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1.25rem;
+    }
+    & .hourlyCards{
+        @include center-content-vertical;
+        justify-content: space-between;
+
+        & .hourlyCard{
+            @include center-content;
+            flex-direction: column;
+            width: 8.125rem;
+            max-height: 16.875rem;
+            border-radius: 2.5rem;
+            -webkit-border-radius: 2.5rem;
+            -moz-border-radius: 2.5rem;
+            -ms-border-radius: 2.5rem;
+            -o-border-radius: 2.5rem;
+            padding: 1rem;
+            background: linear-gradient(171deg, #F88508 -12.41%, rgba(246, 250, 217, 0.00) 163.32%);
+
+            & .hourlyTime{
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+
+            & .hourlyIcon{
+                width: 5rem;
+                height: 5rem;
+            }
+
+            & .hourlyDegree{
+                font-size: 1.25rem;
+                font-weight: 700;
+            }
+
+            & .windDirectionIcon{
+                width: 3.4375rem;
+                height: 3.4375rem;
+            }
+
+            & .hourlyWind{
+                font-size: 1.25rem;
+                font-weight: 700;
+            }
+}
+    }
+}

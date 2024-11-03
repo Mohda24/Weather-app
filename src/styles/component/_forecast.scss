@@ -1,0 +1,45 @@
+@import "../base/variables";
+@import "../mixins/mixin";
+
+section.forecast {
+    background-color: $selection-color;
+    max-width: 25rem;
+    width: 100%;
+    border-radius: 1.875rem;
+    padding: 1.25rem;
+    @include box-shadow;
+
+    & .forecastTitle {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: .625rem
+    }
+
+    & .forecastInfo {
+        @include center-content-vertical;
+        flex-direction: column;
+
+        & .forecastDay {
+            @include center-content-vertical;
+            justify-content: space-between;
+            width: 100%;
+
+            & .forecastIcon {
+                width: 3.75rem;
+                height: 3.75rem;
+            }
+
+            & .forecastDegree{
+                @include center-content-vertical;
+                font-size: 1.5rem;
+                font-weight: 700;
+                gap: .625rem;
+            }
+            & .forecastDayName{
+                font-size: 1.25rem;
+                font-weight: 700;
+            }
+        }
+    }
+}

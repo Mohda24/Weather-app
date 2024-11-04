@@ -9,7 +9,7 @@
   <title>Weather-App</title>
 </head>
 
-<body class="light">
+<body class="dark">
   <div class="container">
     <header>
       <div class="darkMode">
@@ -37,16 +37,16 @@
       <div class="current">
         <!-- Date time info -->
         <section class="dateTimeInfo">
-          <h1 class="city">Athens</h1>
+          <h1 class="city" data-cityName>Athens</h1>
           <div class="dateTime">
-            <span class="time">09:03</span>
-            <span class="date">Thursday, 31 Aug</span>
+            <span class="time" data-cityTime>09:03</span>
+            <span class="date" data-cityDate>Thursday, 31 Aug</span>
           </div>
         </section>
         <!-- WeatherDetail -->
         <section class="weatherDetail">
           <div class="mainDetail">
-            <h2 class="weatherDegree">24°C</h2>
+            <h2 class="weatherDegree" data-currentWetherTemperture>24°C</h2>
             <div class="weatherinfo">
               <div class="sunrise">
                 <div class="sunriseIcon">
@@ -54,7 +54,7 @@
                 </div>
                 <div class="sunriseInfo">
                   <span class="sunriseTitle">Sunrise</span>
-                  <span class="sunriseTime">06:37 AM</span>
+                  <span class="sunriseTime" data-currentWetherSunrise>06:37 AM</span>
                 </div>
               </div>
               <div class="sunset">
@@ -63,7 +63,7 @@
                 </div>
                 <div class="sunsetInfo">
                   <span class="sunsetTitle">Sunset</span>
-                  <span class="sunsetTime">20:37 AM</span>
+                  <span class="sunsetTime" data-currentWetherSunset>20:37 AM</span>
                 </div>
               </div>
 
@@ -74,9 +74,9 @@
           </div>
           <div class="weatherDescription">
             <div class="weatherIcon">
-              <img src="/public/WeatherImages/100.png" alt="Icon for description statu of weather">
+              <img src="/public/WeatherImages/100.png" alt="Icon for description statu of weather" data-currentWeatherIcon>
             </div>
-            <h3 class="weatherStatu">Sunny</h3>
+            <h3 class="weatherStatu" data-currentWeatherDescription>Sunny</h3>
           </div>
           <div class="extraDetail">
             <div class="humidity">
@@ -84,7 +84,7 @@
                 <img src="/public/icons/humidity.png" alt="Icon for Humidity">
               </div>
               <div class="Info">
-                <span class="Value">41%</span>
+                <span class="Value" data-currentWeatherHumidity>41%</span>
                 <span class="Title">Humidity</span>
               </div>
             </div>
@@ -93,8 +93,8 @@
                 <img src="/public/icons/wind.png" alt="Icon for Wind">
               </div>
               <div class="Info">
-                <span class="Value">2km/h</span>
-                <span class="Title">Wind Speed</span>
+                <span class="Value" data-currentWeatherWind>2km/h</span>
+                <span class="Title" >Wind Speed</span>
               </div>
             </div>
             <div class="pressure">
@@ -102,7 +102,7 @@
                 <img src="/public/icons/pressure.png" alt="Icon for Pressure">
               </div>
               <div class="Info">
-                <span class="Value">997hPa</span>
+                <span class="Value" data-currentWeatherPressure>997hPa</span>
                 <span class="Title">Pressure</span>
               </div>
             </div>
@@ -111,7 +111,7 @@
                 <img src="/public/icons/uv.png" alt="Icon for UV">
               </div>
               <div class="Info">
-                <span class="Value">8</span>
+                <span class="Value" data-currentWeatherUv>8</span>
                 <span class="Title">UV</span>
               </div>
             </div>
@@ -125,8 +125,8 @@
       <div class="notCurrent">
         <!-- Forecast -->
         <section class="forecast">
-          <h3 class="forecastTitle">5 Days Forecast:</h3>
-          <div class="forecastInfo">
+          <h3 class="forecastTitle" >5 Days Forecast:</h3>
+          <div class="forecastInfo" data-daysForecats>
             <div class="forecastDay">
               <div class="forecastIcon">
                 <img src="/public/WeatherImages/100.png" alt="Icon for description statu of weather">
@@ -192,7 +192,7 @@
         <!-- Hourly Forecast -->
         <section class="hourlyForecast">
           <h3 class="hourlyTitle">Hourly Forecast:</h3>
-          <div class="hourlyCards">
+          <div class="hourlyCards" data-hourlyForecast>
             <div class="hourlyCard">
               <span class="hourlyTime">09:00</span>
               <div class="hourlyIcon">

@@ -7,7 +7,9 @@
 section.weatherDetail{
     display: flex;
     padding: 20px 25px;
-    max-width: 45.3125rem;
+    min-width: 45.3125rem;
+    width: 100%;
+    max-width: 49.3125rem;
     margin-block: 20px;
     width: 100%;
     min-height: 20.625rem;
@@ -47,6 +49,9 @@ section.weatherDetail{
         & .sunriseIcon,& .sunsetIcon{
             width: 3rem;
             height: 3rem;
+        }
+        body.dark & .sunriseIcon img,body.dark & .sunsetIcon img{
+            @include filter("dark")
         }
         & .sunriseInfo ,& .sunsetInfo{
             @include center-content-horizontal;
@@ -92,7 +97,13 @@ section.weatherDetail{
             & .icon{
                 width: 3.75rem;
                 height: 3.75rem;
-                margin-bottom: .625rem
+                margin-bottom: .625rem;
+
+                body.dark & img{
+                    @include filter("dark")
+
+                    
+                }
             }
             & .Info{
                 @include center-content-vertical;

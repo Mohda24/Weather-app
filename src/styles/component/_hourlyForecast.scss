@@ -29,7 +29,7 @@ section.hourlyForecast{
             -ms-border-radius: 2.5rem;
             -o-border-radius: 2.5rem;
             padding: 1rem;
-            background: linear-gradient(171deg, #F88508 -12.41%, rgba(246, 250, 217, 0.00) 163.32%);
+            
 
             & .hourlyTime{
                 font-size: 1.5rem;
@@ -55,6 +55,20 @@ section.hourlyForecast{
                 font-size: 1.25rem;
                 font-weight: 700;
             }
+}               
+    }
 }
+
+body.light {
+    & .hourlyCard{
+        background: linear-gradient(171deg, #F88508 -12.41%, rgba(246, 250, 217, 0.00) 163.32%);
+    }
+    & .hourlyCard:nth-child(4),.hourlyCard:last-child{
+        background: linear-gradient(168deg, #443D64 -19.21%, rgba(101, 130, 198, 0.00) 158.48%);
+    }
+}
+body.dark{
+    & .hourlyCard{
+        background:$forecast-color;
     }
 }

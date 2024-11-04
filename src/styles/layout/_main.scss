@@ -4,7 +4,7 @@ main{
         & .current{
             @include center-content-vertical;
             justify-content: space-between;
-            // flex-wrap: wrap; 
+            flex-wrap: wrap; 
             gap: 1.25rem 
         }
 

@@ -3,9 +3,10 @@
 
 section.forecast {
     background-color: $selection-color;
-    max-width: 25rem;
+    max-width: 27rem;
     width: 100%;
     border-radius: 1.875rem;
+    text-align: center;
     padding: 1.25rem;
     @include box-shadow;
 
@@ -19,10 +20,12 @@ section.forecast {
     & .forecastInfo {
         @include center-content-vertical;
         flex-direction: column;
+        
 
         & .forecastDay {
             @include center-content-vertical;
-            justify-content: space-between;
+            // justify-content: space-between;
+            gap: 1.875rem;
             width: 100%;
 
             & .forecastIcon {

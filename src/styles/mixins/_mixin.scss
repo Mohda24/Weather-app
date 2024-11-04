@@ -37,3 +37,11 @@
 @mixin box-shadow{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), 10px 10px 4px 0px rgba(0, 0, 0, 0.50);
 }
+// filter style
+@mixin filter($theme){
+    @if $theme == 'light' {
+        filter: invert(0%);
+    } @else if $theme == 'dark' {
+        filter: invert(100%);
+    }
+}

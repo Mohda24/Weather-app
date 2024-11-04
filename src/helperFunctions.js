@@ -92,7 +92,7 @@ const getDarkMode = () => {
     if("darkMode" in localStorage){
         return localStorage.getItem("darkMode");
     }else{
-        return false;
+        return "light";
     }
 }
 const setDarkMode = (mode) => {

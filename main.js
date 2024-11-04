@@ -24,19 +24,30 @@ const hourlyForecast = document.querySelector("[data-hourlyForecast]");
 // Dark mode
 const darkModeToggle = document.querySelector("[data-darkModeToggle]");
 const darkModeTitle = document.querySelector("[data-DarkModeTitle]");
+const elipse=document.querySelector("[data-elipse]");
 
 
 // functions
+const addDarkModeClass = (mode) => {
+    document.body.classList = mode;
+    darkModeTitle.textContent = mode === "dark" ? "Light Mode" : "Dark Mode";
+};
+
+addDarkModeClass(getDarkMode());
+
 // Dark mode toggle
 darkModeToggle.addEventListener("click",()=>{
-    if(getDarkMode()){
-        let mode = getDarkMode();
-        setDarkMode(mode==="dark"?"light":"dark");
-        document.body.classList=mode==="dark"?"light":"dark";
-    }else{
+    let mode = getDarkMode();
+    elipse.classList.toggle("darkModeSwitch");
+
+    if(mode === "light"){
         setDarkMode("dark");
-        document.body.classList="dark";
+        addDarkModeClass("dark");}
+    else{
+        setDarkMode("light");
+        addDarkModeClass("light");
     }
+    
 })
 
 // get data by position

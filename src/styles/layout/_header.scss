@@ -11,9 +11,11 @@ header {
     .darkMode {
         @include center-content-vertical;
         flex-direction: column;
+        user-select: none;
 
         & .darkModBtn {
             position: relative;
+            cursor: pointer;
             width: 6.25rem;
             height: 2.413rem;
             border-radius: 40px;
@@ -41,6 +43,11 @@ header {
                 -moz-transform: translateY();
                 -ms-transform: translateY();
                 -o-transform: translateY();
+                transition: all $transition ease;
+                -webkit-transition: all $transition ease;
+                -moz-transition: all $transition ease;
+                -ms-transition: all $transition ease;
+                -o-transition: all $transition ease;
 }
         }
 
@@ -48,6 +55,10 @@ header {
             font-size: 1.125rem;
             font-weight: 800;
         }
+    }
+    .darkModeSwitch{
+        left: 3.75rem !important;
+
     }
 
     // search bar part

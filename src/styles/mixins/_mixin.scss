@@ -2,11 +2,14 @@
     @if $theme == 'light' {
         background: linear-gradient(113deg, #FFF 0.28%, rgba(70, 97, 115, 0.00) 178.65%);
         color: $light-text-color;
+        $selection-color: red !important; 
+        
     } @else if $theme == 'dark' {
         
         background: linear-gradient(110deg, #444 0%, #000 100%);
         background-repeat: no-repeat;
         color: $dark-text-color;
+        
     } 
 }
 // centre the content

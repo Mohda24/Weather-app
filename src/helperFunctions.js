@@ -1,6 +1,19 @@
 import weatherDescription from "../public/data/weatherDescription.json";
 
 // helper Functions
+// add selected dropdpun
+const addSelected = (flag,name) => {
+    return `
+        <div class="selectCountry">
+            <div class="CountryFlag">
+                <img src="${flag}" alt="Icon for Country">
+            </div>
+            <span class="countryName">${name}</span>
+        </div>
+        <span class="caret"></span>`
+
+}
+
 // get date info
 const getdateInfo = (isoString) => {
     const date = new Date(isoString);
@@ -109,4 +122,4 @@ const setDarkMode = (mode) => {
     localStorage.setItem("darkMode", mode);
 }
 
-export { getdateInfo, getTimeInfo, getTimeByAmPm, getWeatherIcon, getWeatherDescription, getDaysForecast, getHourlyForecast, getWindDirection, getDarkMode, setDarkMode };
+export { getdateInfo, getTimeInfo, getTimeByAmPm, getWeatherIcon, getWeatherDescription, getDaysForecast, getHourlyForecast, getWindDirection, getDarkMode, setDarkMode ,addSelected};

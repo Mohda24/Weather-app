@@ -1,6 +1,6 @@
 
 // Description: Main JS file for the project
-import { getdateInfo, getTimeInfo, getTimeByAmPm, getWeatherIcon, getWeatherDescription, getDaysForecast, getHourlyForecast, getDarkMode, setDarkMode } from "./src/helperFunctions";
+import { getdateInfo, getTimeInfo, getTimeByAmPm, getWeatherIcon, getWeatherDescription, getDaysForecast, getHourlyForecast, getDarkMode, setDarkMode,addSelected } from "./src/helperFunctions";
 import { getCountryData, getWeatherData, getCurrentPosition, getAddress } from "./src/fetchData";
 // select elements
 // header selects
@@ -165,10 +165,15 @@ countrysSelect.addEventListener("click", async (e) => {
         const latLng = e.target.dataset.latlng.split(",");
         const data = await getWeatherData(latLng[0], latLng[1]);
         const city=e.target.querySelector(".countryCapitalName").textContent;
+        const flag=e.target.querySelector(".CountryFlag img").src;
+        const name=e.target.querySelector(".countryCapitalName").textContent;
         
         
         
         changeContent(data, city);
+        dropDownBtn.innerHTML=addSelected(flag,name)
+        searchInput.value = "";
+
         dropDownContent.classList.remove("show");
     }
 });

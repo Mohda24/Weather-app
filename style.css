@@ -12,3 +12,5 @@
 @import "/src/styles/component/_weatherDetail.scss";
 @import "/src/styles/component/_forecast.scss";
 @import "/src/styles/component/_hourlyForecast.scss";
+/* icon style */
+@import "./src/style.css";

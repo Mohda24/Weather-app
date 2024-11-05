@@ -1,4 +1,5 @@
 import axios from "axios";
+const api_key="AIzaSyAEuE4RPWZWH0EJ5c06Egqaza9DgX-gMGs";
 // get Countrys data
 const getCountryData=async ()=>{
     let ApiCountrys="https://restcountries.com/v3.1/all?fields=capital,flags,capitalInfo";
@@ -9,6 +10,24 @@ const getCountryData=async ()=>{
         console.log(error);
         
     }
+}
+// get adresse from lat and long
+const getAddress = async (latitude,longitude)=>{
+    let ApiAdresse=`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${api_key}`;
+    try{
+        const response = await axios.get(ApiAdresse);
+        
+        let cityAdresse=extractCityAdresse(response.data.results[0].formatted_address);
+        
+        return cityAdresse;
+    }catch(error){
+        console.log(error);
+        
+    }
+}
+const extractCityAdresse=(adresse)=>{
+    let cityAdresse=adresse.split(",")[1];
+    return cityAdresse.trim();
 }
 // get Weather data
 const getWeatherData = async (latitude,longitude)=>{
@@ -48,4 +67,4 @@ const getCurrentPosition = async () => {
         }
     });
 }
-export {getCountryData,getWeatherData,getCurrentPosition};
+export {getCountryData,getWeatherData,getCurrentPosition,getAddress};

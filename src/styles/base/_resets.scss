@@ -12,6 +12,7 @@ body{
     scroll-behavior: smooth;
     font-weight: 500;
     min-height: 100vh;
+
 }
 li{
     list-style: none;
@@ -33,6 +34,8 @@ img{
     object-fit: cover;
     user-select: none;
 }
+
+
 // dark mode
 .dark{
     @include theme-background-color('dark');

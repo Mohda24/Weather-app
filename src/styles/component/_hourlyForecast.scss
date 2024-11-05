@@ -2,7 +2,7 @@
 @import "../mixins/mixin";
 // style for hourly forecast
 section.hourlyForecast{
-    background-color: $selection-color;
+    background-color: var(--selection-color);
     max-width: 50rem;
     width: 100%;
     border-radius: 1.875rem;
@@ -67,12 +67,12 @@ body.light {
         background: linear-gradient(168deg, #443D64 -19.21%, rgba(101, 130, 198, 0.00) 158.48%);
     }
 }
-body.dark{
-    & .hourlyCard{
-        background:$forecast-color;
-    }
-}
-body.light .hourlyForecast{
-    background-color: #D9D9D9;
+// body.dark{
+//     & .hourlyCard{
+//         background:var(--selection-color);
+//     }
+// }
+// body.light .hourlyForecast{
+//     background-color: #D9D9D9;
     
-}
+// }

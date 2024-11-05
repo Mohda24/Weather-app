@@ -14,7 +14,7 @@ section.weatherDetail{
     width: 100%;
     min-height: 20.625rem;
     border-radius: 1.875rem;
-    background: $selection-color;
+    background: var(--selection-color);
     @include box-shadow;
 // main detail
     & .mainDetail{
@@ -80,8 +80,9 @@ section.weatherDetail{
             margin-bottom: .625rem;
         }
         & .weatherStatu{
-            font-size: 2rem;
+            font-size: 1.7rem;
             font-weight: 700;
+            text-align: center;
         }
     }
     // Extra Detail
@@ -124,7 +125,7 @@ section.weatherDetail{
 
 
 }
-body.light .weatherDetail{
-    background-color: #D9D9D9;
+// body.light .weatherDetail{
+//     background-color: #D9D9D9;
     
-}
+// }

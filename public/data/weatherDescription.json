@@ -30,47 +30,47 @@
         "icon_night": "501.png"
     },
     "51": {
-        "description": "Drizzle: Light intensity",
+        "description": "Drizzle Light",
         "icon_day": "313.png",
         "icon_night": "313.png"
     },
     "53": {
-        "description": "Drizzle: Moderate intensity",
+        "description": "Drizzle Moderate",
         "icon_day": "314.png",
         "icon_night": "314.png"
     },
     "55": {
-        "description": "Drizzle: Dense intensity",
+        "description": "Drizzle Dense",
         "icon_day": "315.png",
         "icon_night": "315.png"
     },
     "61": {
-        "description": "Rain: Slight intensity",
+        "description": "Rain Slight",
         "icon_day": "305.png",
         "icon_night": "305.png"
     },
     "63": {
-        "description": "Rain: Moderate intensity",
+        "description": "Rain Moderate",
         "icon_day": "307.png",
         "icon_night": "307.png"
     },
     "65": {
-        "description": "Rain: Heavy intensity",
+        "description": "Rain Heavy",
         "icon_day": "308.png",
         "icon_night": "308.png"
     },
     "71": {
-        "description": "Snow fall: Slight intensity",
+        "description": "Snow fall Slight",
         "icon_day": "400.png",
         "icon_night": "400.png"
     },
     "73": {
-        "description": "Snow fall: Moderate intensity",
+        "description": "Snow fall Moderate",
         "icon_day": "401.png",
         "icon_night": "401.png"
     },
     "75": {
-        "description": "Snow fall: Heavy intensity",
+        "description": "Snow fall Heavy",
         "icon_day": "402.png",
         "icon_night": "402.png"
     },
@@ -80,32 +80,32 @@
         "icon_night": "499.png"
     },
     "80": {
-        "description": "Rain showers: Slight",
+        "description": "Rain showers Slight",
         "icon_day": "300.png",
         "icon_night": "350.png"
     },
     "81": {
-        "description": "Rain showers: Moderate",
+        "description": "Rain showers Moderate",
         "icon_day": "351.png",
         "icon_night": "351.png"
     },
     "82": {
-        "description": "Rain showers: Violent",
+        "description": "Rain showers Violent",
         "icon_day": "302.png",
         "icon_night": "302.png"
     },
     "95": {
-        "description": "Thunderstorm: Slight or moderate",
+        "description": "Thunderstorm moderate",
         "icon_day": "302.png",
         "icon_night": "302.png"
     },
     "96": {
-        "description": "Thunderstorm with slight hail",
+        "description": "Thunderstorm & slight hail",
         "icon_day": "303.png",
         "icon_night": "303.png"
     },
     "99": {
-        "description": "Thunderstorm with heavy hail",
+        "description": "Thunderstorm & heavy hail",
         "icon_day": "304.png",
         "icon_night": "304.png"
     }

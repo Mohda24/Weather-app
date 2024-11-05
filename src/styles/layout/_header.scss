@@ -39,16 +39,12 @@ header {
                 border-radius: 50%;
                 background-color: #111;
                 display: inline-block;
-                -webkit-transform: translateY();
-                -moz-transform: translateY();
-                -ms-transform: translateY();
-                -o-transform: translateY();
-                transition: all $transition ease;
-                -webkit-transition: all $transition ease;
-                -moz-transition: all $transition ease;
-                -ms-transition: all $transition ease;
-                -o-transition: all $transition ease;
-}
+                transition: all var(--transition) ease;
+                -webkit-transition: all var(--transition) ease;
+                -moz-transition: all var(--transition) ease;
+                -ms-transition: all var(--transition) ease;
+                -o-transition: all var(--transition) ease;
+            }
         }
 
         & .DarkModeTitle {
@@ -56,7 +52,8 @@ header {
             font-weight: 800;
         }
     }
-    .darkModeSwitch{
+
+    .darkModeSwitch {
         left: 3.75rem !important;
 
     }
@@ -100,6 +97,182 @@ header {
         }
     }
 
+    // Drop Doun part
+    .dropDoun {
+        min-width: 20rem;
+        max-width: 25rem;
+        flex: 1;
+        position: relative;
+        border-radius: 1rem;
+        user-select: none;
+
+        & .dropDounBtn {
+            @include center-content-vertical;
+            justify-content: space-between;
+            padding: 1rem 1.875rem;
+            background-color: green;
+            border-radius: 1rem;
+            background-color: var(--selection-color);
+
+
+
+            & .selectCountry {
+                @include center-content-vertical;
+                gap: .25rem;
+                font-size: .875rem;
+                font-weight: 600;
+            }
+
+            & .caret {
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 6px solid white;
+
+            }
+
+        }
+
+        & .dropDounContent {
+            z-index: 9999;
+            position: absolute;
+            top: calc(100% + 1rem);
+            border-radius: 1rem;
+            visibility: hidden;
+            opacity: 0;
+            width: 100%;
+            background-color: red;
+            padding: .9375rem;
+            background-color: var(--selection-color);
+            box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
+
+            // show content
+            &.show{
+                @include visible;
+            }
+
+            & .dropDounSearch {
+                @include center-content-vertical;
+                gap: .25rem;
+                padding: 10px;
+                border: 1px solid #000;
+                border-radius: .3125rem;
+                -webkit-border-radius: .3125rem;
+                -moz-border-radius: .3125rem;
+                -ms-border-radius: .3125rem;
+                -o-border-radius: .3125rem;
+
+
+                & .icon-search {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    padding-top: 2px;
+
+                }
+
+                & input {
+                    all: unset;
+                    flex: 1;
+
+                    ::placeholder {
+                        color: var(--light-text-color);
+                        filter: brightness(130%);
+                    }
+
+                }
+
+                &:focus-within {
+                    outline: 2px solid;
+                    /* or any other style you prefer */
+                    outline-color: #666666;
+                    /* Great color based on #444 */
+                    box-shadow: 0 0 10px #719ECE;
+                }
+
+
+            }
+
+            // style for countrys
+
+            & .countrys {
+                margin-top: 1rem;
+                max-height: 14.375rem;
+                overflow-y: auto;
+                padding: 1rem;
+                border-radius: .3125rem;
+                -webkit-border-radius: .3125rem;
+                -moz-border-radius: .3125rem;
+                -ms-border-radius: .3125rem;
+                -o-border-radius: .3125rem;
+
+                // scroll bar
+                &::-webkit-scrollbar {
+                    width: 10px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: #f1f1f1;
+                    border-radius: .3125rem;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: #888;
+                    border-radius: .3125rem;
+                }
+
+                &::-webkit-scrollbar-thumb:hover {
+                    background: #555;
+                }
+
+
+
+
+                & .countryName {
+                    @include center-content-vertical;
+                    gap: .9375rem;
+                    background-color: var(--selection-color);
+                    padding: .625rem;
+                    border-radius: .3125rem;
+                    filter: brightness(130%);
+                    -webkit-filter: brightness(130%);
+                    -moz-filter: brightness(130%);
+                    -ms-filter: brightness(130%);
+                    -o-filter: brightness(130%);
+                    transition-property: filter;
+                    transition: var(--transition) ease;
+                    -webkit-transition: var(--transition) ease;
+                    -moz-transition: var(--transition) ease;
+                    -ms-transition: var(--transition) ease;
+                    margin-bottom: .625rem;
+
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 0.9;
+                        filter: brightness(170%);
+                        -webkit-filter: brightness(170%);
+                        -moz-filter: brightness(100%);
+                        -ms-filter: brightness(100%);
+                        -o-filter: brightness(100%);
+}
+                }
+
+                & .CountryFlag {
+                    width: 1.5rem;
+                    height: 1rem;
+
+                }
+
+            }
+
+        }
+
+        .CountryFlag {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
     // location part
     .location {
         user-select: none;
@@ -114,11 +287,11 @@ header {
         @include center-content;
         background-color: #4CBB17;
         gap: .25rem;
-        transition: $transition ease;
-        -webkit-transition: $transition ease;
-        -moz-transition: $transition ease;
-        -ms-transition: $transition ease;
-        -o-transition: $transition ease;
+        transition: var(--transition) ease;
+        -webkit-transition: var(--transition) ease;
+        -moz-transition: var(--transition) ease;
+        -ms-transition: var(--transition) ease;
+        -o-transition: var(--transition) ease;
 
         &:hover {
             cursor: pointer;

@@ -1,4 +1,5 @@
 import weatherDescription from "../public/data/weatherDescription.json";
+
 // helper Functions
 // get date info
 const getdateInfo = (isoString) => {
@@ -25,7 +26,10 @@ const getTimeByAmPm = (isoString) => {
 // get weather icon and description
 const getWeatherIcon = (weatherCode, is_day) => {
     let weather = weatherDescription[weatherCode];
-    let icon = is_day ? weather.icon_day : weather.icon_night;
+    let icon = is_day===1 ? weather.icon_day : weather.icon_night;
+    console.log("is day",is_day,"icon",icon);
+    
+    
     return icon;
 }
 // get description
@@ -62,7 +66,7 @@ const getDaysForecast = ({ time, weatherCode, temp_min, temp_max }) => {
 
 }
 // get hourly forecast
-const  getHourlyForecast=({time,weatherCode,temp,wind_speed})=>{
+const  getHourlyForecast=({time,weatherCode,temp,wind_speed,wind_direction})=>{
     let hourlyForecast="";
     let index=12;
     let LastPositionCard=24;
@@ -71,11 +75,11 @@ const  getHourlyForecast=({time,weatherCode,temp,wind_speed})=>{
             <div class="hourlyCard">
                 <span class="hourlyTime">${getTimeInfo(time[index])}</span>
                 <div class="hourlyIcon">
-                    <img src="/public/WeatherImages/${getWeatherIcon(weatherCode[index],1)}" alt="Icon for description statu of weather">
+                    <img src="/public/WeatherImages/${index <= 18 ? getWeatherIcon(weatherCode[index], 1) : getWeatherIcon(weatherCode[index], 0)}" alt="Icon for description statu of weather">
                 </div>
                 <span class="hourlyDegree">${temp[index]}°C</span>
                 <div class="windDirectionIcon">
-                    <img src="/public/icons/windDirection.png" alt="Icon for Wind Direction">
+                    <img style="${getWindDirection(wind_direction[index])}" src="/public/icons/windDirection.png" alt="Icon for Wind Direction">
                 </div>
                 <span class="hourlyWind">${wind_speed[index]}km/h</span>
             </div>
@@ -85,6 +89,12 @@ const  getHourlyForecast=({time,weatherCode,temp,wind_speed})=>{
 
     }
     return hourlyForecast;
+}
+// get direction of wind
+const getWindDirection = (degree) => {
+    return `transform:rotate(${degree}deg)`;
+
+    
 }
 
 // dark mode
@@ -99,4 +109,4 @@ const setDarkMode = (mode) => {
     localStorage.setItem("darkMode", mode);
 }
 
-export { getdateInfo, getTimeInfo, getTimeByAmPm, getWeatherIcon, getWeatherDescription, getDaysForecast, getHourlyForecast,getDarkMode,setDarkMode };
+export { getdateInfo, getTimeInfo, getTimeByAmPm, getWeatherIcon, getWeatherDescription, getDaysForecast, getHourlyForecast, getWindDirection, getDarkMode, setDarkMode };

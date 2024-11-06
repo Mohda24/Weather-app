@@ -90,7 +90,7 @@ const  getHourlyForecast=({time,weatherCode,temp,wind_speed,wind_direction})=>{
             <div class="hourlyCard">
                 <span class="hourlyTime">${getTimeInfo(time[index])}</span>
                 <div class="hourlyIcon">
-                    <img src="//WeatherImages/${index <= 18 ? getWeatherIcon(weatherCode[index], 1) : getWeatherIcon(weatherCode[index], 0)}" alt="Icon for description statu of weather">
+                    <img src="/WeatherImages/${index <= 18 ? getWeatherIcon(weatherCode[index], 1) : getWeatherIcon(weatherCode[index], 0)}" alt="Icon for description statu of weather">
                 </div>
                 <span class="hourlyDegree">${temp[index]}°C</span>
                 <div class="windDirectionIcon">

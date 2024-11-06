@@ -19,7 +19,7 @@ const getAddress = async (latitude,longitude)=>{
         
         let cityAdresse=extractCityAdresse(response.data.results[0].formatted_address);
         
-        return [cityAdresse,response.data];
+        return cityAdresse;
     }catch(error){
         console.log(error);
         

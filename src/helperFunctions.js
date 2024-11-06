@@ -124,4 +124,11 @@ const setDarkMode = (mode) => {
     localStorage.setItem("darkMode", mode);
 }
 
-export { getdateInfo, getTimeInfo, getTimeByAmPm, getWeatherIcon, getWeatherDescription, getDaysForecast, getHourlyForecast, getWindDirection, getDarkMode, setDarkMode ,addSelected};
+// function remove class from array
+const removeClass = (array, className) => {
+    array.forEach(element => {
+        element.classList.remove(className);
+    });
+}
+
+export { getdateInfo, getTimeInfo, getTimeByAmPm, getWeatherIcon, getWeatherDescription, getDaysForecast, getHourlyForecast, getWindDirection, getDarkMode, setDarkMode ,addSelected,removeClass};

@@ -1,6 +1,6 @@
 
 // Description: Main JS file for the project
-import { getdateInfo, getTimeInfo, getTimeByAmPm, getWeatherIcon, getWeatherDescription, getDaysForecast, getHourlyForecast, getDarkMode, setDarkMode,addSelected } from "./src/helperFunctions";
+import { getdateInfo, getTimeInfo, getTimeByAmPm, getWeatherIcon, getWeatherDescription, getDaysForecast, getHourlyForecast, getDarkMode, setDarkMode,addSelected, removeClass } from "./src/helperFunctions";
 import { getCountryData, getWeatherData, getCurrentPosition, getAddress } from "./src/fetchData";
 // select elements
   // header selects
@@ -56,7 +56,7 @@ const getWeatherDataByPosition = async () => {
         const weatherData = await getWeatherData(lat, long);
         console.log(weatherData);
 
-        return weatherData;
+        return [weatherData,{lat,long}];
     } catch (error) {
         console.error(error);
     }
@@ -171,26 +171,24 @@ Array.from(countrysSelect.children).forEach((country)=>{
         
         
         changeContent(data, city);
+        let blurElements=document.querySelectorAll(".blur");
+        if(blurElements)removeClass(blurElements,"blur");
         dropDownBtn.innerHTML=addSelected(flag,name)
         searchInput.value = "";
         // remove hidden class from countrys
         const countrysHiden=Array.from(countrysSelect.querySelectorAll(".countryName.hide"));
-        countrysHiden.forEach((country)=>country.classList.remove("hide"))
-
+        removeClass(countrysHiden, "hide");
         dropDownContent.classList.remove("show");
-
-
     })
 })
 
 // get current weather data by btn
 currentBtn.addEventListener("click",async ()=>{
     const weatherData =await getWeatherDataByPosition();
-    console.log(weatherData);
-    
-    const currentAdresse=await getAddress();
-    console.log(currentAdresse);
-    changeContent(weatherData, currentAdresse);
+    const currentAdresse=await getAddress(weatherData[1].lat,weatherData[1].long);
+    changeContent(weatherData[0], currentAdresse);
+    let blurElements=document.querySelectorAll(".blur");
+    if(blurElements)removeClass(blurElements,"blur")
 })
 
 

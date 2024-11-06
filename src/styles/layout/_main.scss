@@ -22,3 +22,12 @@ main{
         }
     }
 }
+
+// blur 
+.blur{
+    filter: blur(10px) brightness(0.7);
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    -webkit-filter: blur(10px) brightness(0.7);
+}
+

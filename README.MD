@@ -11,7 +11,7 @@ This is a weather application that provides current weather information, forecas
 1. Clone the repository:
 
     ```sh
-    git clone <repository-url>
+    git clone <git@github.com:Mohda24/Weather-app.git>
     ```
 2. Navigate to the project directory:
     ```sh

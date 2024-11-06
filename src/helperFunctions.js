@@ -94,7 +94,7 @@ const  getHourlyForecast=({time,weatherCode,temp,wind_speed,wind_direction})=>{
                 </div>
                 <span class="hourlyDegree">${temp[index]}°C</span>
                 <div class="windDirectionIcon">
-                    <img style="${getWindDirection(wind_direction[index])}" src="/public/icons/windDirection.png" alt="Icon for Wind Direction">
+                    <img style="${getWindDirection(wind_direction[index])}" src="/icons/windDirection.png" alt="Icon for Wind Direction">
                 </div>
                 <span class="hourlyWind">${wind_speed[index]}km/h</span>
             </div>

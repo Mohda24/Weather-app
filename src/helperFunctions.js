@@ -65,7 +65,7 @@ const getDaysForecast = ({ time, weatherCode, temp_min, temp_max }) => {
         daysForecast += `
         <div class="forecastDay">
             <div class="forecastIcon">
-                <img src="/public/WeatherImages/${getWeatherIcon(weatherCode[index],1)}" alt="Icon for description statu of weather">
+                <img src="/WeatherImages/${getWeatherIcon(weatherCode[index],1)}" alt="Icon for description statu of weather">
             </div>
             <div class="forecastDegree">
                 <span class="forecastMax">${temp_max[index]}°C</span>
@@ -90,7 +90,7 @@ const  getHourlyForecast=({time,weatherCode,temp,wind_speed,wind_direction})=>{
             <div class="hourlyCard">
                 <span class="hourlyTime">${getTimeInfo(time[index])}</span>
                 <div class="hourlyIcon">
-                    <img src="/public/WeatherImages/${index <= 18 ? getWeatherIcon(weatherCode[index], 1) : getWeatherIcon(weatherCode[index], 0)}" alt="Icon for description statu of weather">
+                    <img src="//WeatherImages/${index <= 18 ? getWeatherIcon(weatherCode[index], 1) : getWeatherIcon(weatherCode[index], 0)}" alt="Icon for description statu of weather">
                 </div>
                 <span class="hourlyDegree">${temp[index]}°C</span>
                 <div class="windDirectionIcon">

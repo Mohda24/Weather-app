@@ -71,7 +71,7 @@ const changeContent = (data, city) => {
     currentWetherTemperture.textContent = `${data.current.temperature_2m}${data.current_units.temperature_2m}`;
     currentSunrise.textContent = getTimeByAmPm(data.daily.sunrise[0]);
     currentSunset.textContent = getTimeByAmPm(data.daily.sunset[0]);
-    currentWeatherIcon.src = `/public/WeatherImages/${getWeatherIcon(data.current.weather_code, data.current.is_day)}`;
+    currentWeatherIcon.src = `/WeatherImages/${getWeatherIcon(data.current.weather_code, data.current.is_day)}`;
     currentWeatherDescription.textContent = getWeatherDescription(data.current.weather_code);
     currentWeatherHumidity.textContent = `${data.current.relative_humidity_2m}${data.current_units.relative_humidity_2m}`;
     currentWeatherWind.textContent = `${data.current.wind_speed_10m}${data.current_units.wind_speed_10m}`;

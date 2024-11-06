@@ -5,13 +5,20 @@ main{
             @include center-content-vertical;
             justify-content: space-between;
             flex-wrap: wrap; 
-            gap: 1.25rem 
+            gap: 1.25rem ;
+            @include large{
+                justify-content: center
+            }
         }
 
         & .notCurrent{
             @include center-content-vertical;
             justify-content: space-between;
             flex-wrap: wrap;
+            @include large{
+                justify-content: center;
+                gap: 1.25rem
+            }
         }
     }
 }

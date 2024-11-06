@@ -54,3 +54,10 @@ img{
     padding: 0 1rem;
 }
 
+// breakdoun media query
+@include small{
+    html{
+        font-size: 87.5%;
+    }   
+}
+

@@ -16,6 +16,12 @@ section.weatherDetail{
     border-radius: 1.875rem;
     background: var(--selection-color);
     @include box-shadow;
+
+    @include small{
+        flex-direction: column;
+        padding: 20px 15px;
+        min-width: unset;
+    }
 // main detail
     & .mainDetail{
         @include center-content;
@@ -40,7 +46,14 @@ section.weatherDetail{
     & .weatherinfo{
         @include center-content-horizontal;
         flex-direction: column;
-        gap: 1.25rem
+        gap: 1.25rem;
+
+        @include small{
+            flex-direction: row;
+            gap: 1.25rem;
+            padding: 0;
+            margin-top: 1.25rem;
+        }
     }
 
     & .sunrise,& .sunset{
@@ -74,10 +87,22 @@ section.weatherDetail{
         @include center-content-vertical;
         flex-direction: column;
 
+        @include small{
+            flex-direction: row;
+            gap: 1.25rem;
+            justify-content: center;
+            margin-top:1.25rem ;
+        }
+
         & .weatherIcon{
             width: 12rem;
             height: 12rem;
             margin-bottom: .625rem;
+
+            @include small{
+                width: 6.25rem;
+                height: 6.25rem;
+            }
         }
         & .weatherStatu{
             font-size: 1.7rem;
@@ -89,12 +114,21 @@ section.weatherDetail{
     & .extraDetail{
         display: flex;
         flex-wrap: wrap;
+
+        @include small{
+            flex-wrap: nowrap;
+    overflow-x: auto;
+        }
         
         & .humidity,& .wind,& .pressure,& .uv{
             @include center-content-vertical;
             flex-direction: column;
             padding: 1.25rem;
             width: 9.375rem;
+
+            @include small{
+                padding: 1rem;
+            }
             & .icon{
                 width: 3.75rem;
                 height: 3.75rem;

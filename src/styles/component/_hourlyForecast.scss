@@ -17,6 +17,8 @@ section.hourlyForecast{
     & .hourlyCards{
         @include center-content-vertical;
         justify-content: space-between;
+        overflow-x: auto;
+        
 
         & .hourlyCard{
             @include center-content;
@@ -29,6 +31,11 @@ section.hourlyForecast{
             -ms-border-radius: 2.5rem;
             -o-border-radius: 2.5rem;
             padding: 1rem;
+
+            @include small{
+                margin-right: 1.25rem;
+            
+            }
             
 
             & .hourlyTime{
@@ -67,12 +74,8 @@ body.light {
         background: linear-gradient(168deg, #443D64 -19.21%, rgba(101, 130, 198, 0.00) 158.48%);
     }
 }
-// body.dark{
-//     & .hourlyCard{
-//         background:var(--selection-color);
-//     }
-// }
-// body.light .hourlyForecast{
-//     background-color: #D9D9D9;
-    
-// }
+body.dark{
+    & .hourlyCard{
+        background:#373636;
+    }
+}

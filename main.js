@@ -3,13 +3,17 @@
 import { getdateInfo, getTimeInfo, getTimeByAmPm, getWeatherIcon, getWeatherDescription, getDaysForecast, getHourlyForecast, getDarkMode, setDarkMode,addSelected } from "./src/helperFunctions";
 import { getCountryData, getWeatherData, getCurrentPosition, getAddress } from "./src/fetchData";
 // select elements
-// header selects
-// droupdoun
+  // header selects
+  // droupdoun
 const dropDownBtn = document.querySelector("[data-dropDounBtn]");
 const dropDownContent = document.querySelector("[data-dropDounContent]");
 const searchInput = document.querySelector("[data-search]");
 // countrys select
 const countrysSelect = document.querySelector("[data-selectCountrys]");
+// current Possition
+const currentBtn=document.querySelector("[data-locationBtn]")
+
+
 
 // cityInfo
 const cityName = document.querySelector("[data-cityName]");
@@ -41,10 +45,7 @@ const addDarkModeClass = (mode) => {
     document.body.classList = mode;
     darkModeTitle.textContent = mode === "dark" ? "Light Mode" : "Dark Mode";
 };
-
 addDarkModeClass(getDarkMode());
-
-
 
 // get data by position
 const getWeatherDataByPosition = async () => {
@@ -60,8 +61,6 @@ const getWeatherDataByPosition = async () => {
         console.error(error);
     }
 }
-
-
 // change content
 const changeContent = (data, city) => {
     // cityInfo
@@ -112,10 +111,6 @@ const addCountrySelect = (data) => {
     countrysSelect.innerHTML = countrysData;
 }
 
-let mohda = await getWeatherData(39.47920587965429, -0.37990246196968624);
-const data = await getAddress(39.47920587965429, -0.37990246196968624);
-changeContent(mohda, data);
-
 // Events Listeners
 // Dark mode toggle
 darkModeToggle.addEventListener("click", () => {
@@ -135,48 +130,68 @@ darkModeToggle.addEventListener("click", () => {
 // get countrys call
 addCountrySelect(await getCountryData());
 
-
 // serach input
 searchInput.addEventListener("input", (e) => {
 
     
     const searchValue = e.target.value.toLowerCase();
     const countryNames = Array.from(document.querySelectorAll("li.countryName"));
-    console.log(countryNames);
+    // console.log(countryNames);
     
     countryNames.forEach((country) => {
-        console.log(country);
+        // console.log(country);
         const countryName = country.querySelector(".countryCapitalName").textContent.toLowerCase();
         console.log(countryName);
         if (countryName.includes(searchValue)) {
-            country.style.display = "flex";
+            country.classList.remove("hide");
+            console.log("&");
+            
         } else {
-            country.style.display = "none";
+            country.classList.add("hide");
+            console.log(44);
+            
         }
     });
 });
-
+// show dropdown
 dropDownBtn.addEventListener("click", () => {
     dropDownContent.classList.toggle("show");
 });
 
-countrysSelect.addEventListener("click", async (e) => {
-    if (e.target.classList.contains("countryName")) {
-        const latLng = e.target.dataset.latlng.split(",");
+// get weather data by citys
+Array.from(countrysSelect.children).forEach((country)=>{
+    country.addEventListener('click',async ()=>{
+
+        const latLng = country.dataset.latlng.split(",");
         const data = await getWeatherData(latLng[0], latLng[1]);
-        const city=e.target.querySelector(".countryCapitalName").textContent;
-        const flag=e.target.querySelector(".CountryFlag img").src;
-        const name=e.target.querySelector(".countryCapitalName").textContent;
+        const city=country.querySelector(".countryCapitalName").textContent;
+        const flag=country.querySelector(".CountryFlag img").src;
+        const name=country.querySelector(".countryCapitalName").textContent;
         
         
         
         changeContent(data, city);
         dropDownBtn.innerHTML=addSelected(flag,name)
         searchInput.value = "";
+        // remove hidden class from countrys
+        const countrysHiden=Array.from(countrysSelect.querySelectorAll(".countryName.hide"));
+        countrysHiden.forEach((country)=>country.classList.remove("hide"))
 
         dropDownContent.classList.remove("show");
-    }
-});
+
+
+    })
+})
+
+// get current weather data by btn
+currentBtn.addEventListener("click",async ()=>{
+    const weatherData =await getWeatherDataByPosition();
+    console.log(weatherData);
+    
+    const currentAdresse=await getAddress();
+    console.log(currentAdresse);
+    changeContent(weatherData, currentAdresse);
+})
 
 
     

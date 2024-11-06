@@ -1,62 +1,100 @@
 @mixin theme-background-color($theme) {
-    @if $theme == 'light' {
+    @if $theme =='light' {
         background: linear-gradient(113deg, #FFF 0.28%, rgba(70, 97, 115, 0.00) 178.65%);
         color: var(--text-color);
-        $selection-color: red !important; 
-        
-    } @else if $theme == 'dark' {
-        
+        $selection-color: red !important;
+
+    }
+
+    @else if $theme =='dark' {
+
         background: linear-gradient(110deg, #444 0%, #000 100%);
         background-repeat: no-repeat;
         color: var(--text-color);
-        
-    } 
+
+    }
 }
+
 // centre the content
 @mixin center-content {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 // centre the content vertically
 @mixin center-content-vertical {
     display: flex;
     align-items: center;
 }
+
 // centre the content horizontally
 @mixin center-content-horizontal {
     display: flex;
     justify-content: center;
 }
+
 // weather degree style
 @mixin weather-degree($theme) {
-    @if $theme == 'light' {
-        background:  linear-gradient(80deg, #292929 -2.93%, rgba(255, 255, 255, 0.00) 212.44%);
-    } @else if $theme == 'dark' {
+    @if $theme =='light' {
+        background: linear-gradient(80deg, #292929 -2.93%, rgba(255, 255, 255, 0.00) 212.44%);
+    }
+
+    @else if $theme =='dark' {
         background: linear-gradient(84deg, #FFF -16.56%, rgba(255, 255, 255, 0.00) 118.43%);
     }
 }
+
 // box shadow style
-@mixin box-shadow{
+@mixin box-shadow {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), 10px 10px 4px 0px rgba(0, 0, 0, 0.50);
 }
+
 // filter style
-@mixin filter($theme){
-    @if $theme == 'light' {
+@mixin filter($theme) {
+    @if $theme =='light' {
         filter: invert(0%);
-    } @else if $theme == 'dark' {
+    }
+
+    @else if $theme =='dark' {
         filter: invert(100%);
     }
 }
-// countrys are hidden
-// @mixin hidden {
-//     visibility: hidden;
-//     opacity: 0;
-//     transition: visibility 0s, opacity 0.5s linear;
-// }
+
 // countrys are visible
 @mixin visible {
     visibility: visible;
     opacity: 1;
     transition: visibility 0s, opacity 0.5s linear;
+}
+
+// breakdoun media query
+@mixin large {
+    @media (max-width: 1200px) {
+        @content
+    }
+}
+
+;
+
+@mixin medium {
+    @media (max-width: 992px) {
+        @content
+    }
+}
+
+;
+
+@mixin small {
+    @media (max-width: 768px) {
+        @content
+    }
+}
+
+;
+
+@mixin very-small {
+    @media (max-width: 376px) {
+        @content
+    }
 }

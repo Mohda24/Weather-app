@@ -81,7 +81,9 @@ const getDaysForecast = ({ time, weatherCode, temp_min, temp_max }) => {
 // get hourly forecast
 const  getHourlyForecast=({time,weatherCode,temp,wind_speed,wind_direction})=>{
     let hourlyForecast="";
+    // index of 12pm from api
     let index=12;
+    // index of 00am from api
     let LastPositionCard=24;
     while(index<=LastPositionCard){
         hourlyForecast+=`

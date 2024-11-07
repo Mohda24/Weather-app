@@ -106,9 +106,17 @@ header {
         border-radius: 1rem;
         user-select: none;
 
-        @include small{
-            display: none;
+        @include small {
+            display: block;
+            position: fixed;
+            top: -100%;
+            visibility: hidden;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999999;
         }
+
+        
 
         & .dropDounBtn {
             @include center-content-vertical;
@@ -133,8 +141,12 @@ header {
                 border-left: 5px solid transparent;
                 border-right: 5px solid transparent;
                 border-top: 6px solid white;
-
-            }
+                transition: transform var(--transition);
+                -webkit-transition: transform var(--transition);
+                -moz-transition: transform var(--transition);
+                -ms-transition: transform var(--transition);
+                -o-transition: transform var(--transition);
+}
 
         }
 
@@ -152,7 +164,7 @@ header {
             box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
 
             // show content
-            &.show{
+            &.show {
                 @include visible;
             }
 
@@ -258,7 +270,7 @@ header {
                         -moz-filter: brightness(100%);
                         -ms-filter: brightness(100%);
                         -o-filter: brightness(100%);
-}
+                    }
                 }
 
                 & .CountryFlag {
@@ -298,7 +310,7 @@ header {
         -ms-transition: var(--transition) ease;
         -o-transition: var(--transition) ease;
 
-        @include small{
+        @include small {
             width: 4.9375rem;
         }
 
@@ -317,7 +329,8 @@ header {
             color: rgba(255, 255, 255, 0.80);
             font-size: 1.375rem;
             font-weight: 800;
-            @include large{
+
+            @include large {
                 display: none;
             }
 
@@ -325,8 +338,53 @@ header {
 
         }
     }
+
+    // mobile icon
+    .icon-menu1 {
+        display: none;
+
+        @include small {
+            display: block;
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+    }
+}
+// rotate class
+.rotate {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
 }
 // hide class
-.hide{
+.hide {
     display: none !important;
+}
+// animation
+@keyframes bounce {
+    0% {
+        top: -100%;
+        visibility: hidden;
+        
+}
+
+    50% {
+        top:60px;
+        visibility: visible;
+
+}
+
+    100% {
+        top: 40px;
+        visibility: visible;
+
+        
+}
+}
+// animation
+.bounce {
+    animation: bounce 1s ease forwards;
+    -webkit-animation: bounce 1s ease forwards;
 }

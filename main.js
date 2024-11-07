@@ -5,9 +5,11 @@ import { getCountryData, getWeatherData, getCurrentPosition, getAddress } from "
 // select elements
   // header selects
   // droupdoun
+const dropDown=document.querySelector(".dropDoun");
 const dropDownBtn = document.querySelector("[data-dropDounBtn]");
 const dropDownContent = document.querySelector("[data-dropDounContent]");
 const searchInput = document.querySelector("[data-search]");
+const caret=document.querySelector(".caret");
 // countrys select
 const countrysSelect = document.querySelector("[data-selectCountrys]");
 // current Possition
@@ -37,6 +39,11 @@ const hourlyForecast = document.querySelector("[data-hourlyForecast]");
 const darkModeToggle = document.querySelector("[data-darkModeToggle]");
 const darkModeTitle = document.querySelector("[data-DarkModeTitle]");
 const elipse = document.querySelector("[data-elipse]");
+// mobile icon
+const mobileIcon = document.querySelector("[data-mobileIcon]");
+// overlay
+const overlay=document.querySelector(".overlay");
+
 
 
 // functions
@@ -155,6 +162,7 @@ searchInput.addEventListener("input", (e) => {
 });
 // show dropdown
 dropDownBtn.addEventListener("click", () => {
+    caret.classList.toggle("rotate");
     dropDownContent.classList.toggle("show");
 });
 
@@ -168,8 +176,6 @@ Array.from(countrysSelect.children).forEach((country)=>{
         const flag=country.querySelector(".CountryFlag img").src;
         const name=country.querySelector(".countryCapitalName").textContent;
         
-        
-        
         changeContent(data, city);
         let blurElements=document.querySelectorAll(".blur");
         if(blurElements)removeClass(blurElements,"blur");
@@ -179,6 +185,10 @@ Array.from(countrysSelect.children).forEach((country)=>{
         const countrysHiden=Array.from(countrysSelect.querySelectorAll(".countryName.hide"));
         removeClass(countrysHiden, "hide");
         dropDownContent.classList.remove("show");
+        // mobile
+        overlay.style.display="none";
+        dropDown.classList.remove("bounce")
+
     })
 })
 
@@ -190,6 +200,13 @@ currentBtn.addEventListener("click",async ()=>{
     let blurElements=document.querySelectorAll(".blur");
     if(blurElements)removeClass(blurElements,"blur")
 })
+
+// mobile icon show dropdown
+mobileIcon.addEventListener("click",()=>{
+    overlay.style.display="block";
+    dropDown.classList.add("bounce")
+})
+
 
 
     

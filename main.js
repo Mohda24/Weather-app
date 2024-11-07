@@ -106,7 +106,7 @@ const changeContent = (data, city) => {
 const addCountrySelect = (data) => {
     let countrysData = "";
     data.forEach((country) => {
-        if(country.capitalInfo.latlng.length === 0 || country.capital=="Jerusalem") return;
+        if(country.capitalInfo.latlng.length === 0 || country.capital=="Jerusalem" || country.capital=="El Aaiún") return;
         countrysData += `
             <li class="countryName" data-LatLng="${country.capitalInfo.latlng[0]},${country.capitalInfo.latlng[1]}">
                 <div class="CountryFlag">
